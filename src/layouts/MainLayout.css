@@ -1,0 +1,28 @@
+.layout-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  position: relative;
+}
+
+.layout-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  transition: margin-left var(--transition-md);
+}
+
+.layout-content {
+  flex: 1;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .layout-body {
+    margin-left: 0;
+    padding-bottom: 60px; /* Room for mobile bottom nav */
+  }
+}
