@@ -1,19 +1,16 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, Link } from 'react-router-dom';
 import {
   Home,
-  Compass,
   Sparkles,
   Laptop,
-  LayoutGrid,
   GitCompare,
-  Wand2,
   BookOpen,
-  User,
   Bookmark,
   FolderHeart,
   X,
   ArrowRight,
+  TrendingUp,
 } from 'lucide-react';
 import { ToolWiseLogo } from '../common/ToolWiseLogo';
 import { useCompare } from '../../context/CompareContext';
@@ -39,11 +36,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
       if (location.pathname !== targetPath) return false;
       const targetParams = new URLSearchParams(targetQuery);
       const currentParams = new URLSearchParams(location.search);
-
       for (const [key, val] of targetParams.entries()) {
-        if (currentParams.get(key)?.toLowerCase() !== val.toLowerCase()) {
-          return false;
-        }
+        if (currentParams.get(key)?.toLowerCase() !== val.toLowerCase()) return false;
       }
       return true;
     }
@@ -55,19 +49,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
 
   const primaryNavItems = [
     { label: 'Home', to: '/', icon: Home },
-    { label: 'Explore', to: '/explore', icon: Compass },
     { label: 'AI Tools', to: '/explore?type=ai', icon: Sparkles, accent: 'ai' },
     { label: 'Software', to: '/explore?type=software', icon: Laptop, accent: 'software' },
-    { label: 'Categories', to: '/explore?view=categories', icon: LayoutGrid },
     {
       label: 'Compare',
       to: '/compare',
       icon: GitCompare,
       badge: compareToolIds.length > 0 ? compareToolIds.length : undefined,
     },
-    { label: 'Recommendations', to: '/recommendations', icon: Wand2 },
-    { label: 'Research', to: '/research', icon: BookOpen },
-    { label: 'Profile', to: '/profile', icon: User },
+    { label: 'Reviews', to: '/research', icon: BookOpen },
+    { label: 'Saved', to: '/profile?tab=saved', icon: Bookmark },
   ];
 
   return (
@@ -129,7 +120,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
                 className="sidebar-sub-item"
               >
                 <div className="sidebar-sub-left">
-                  <Bookmark size={15} />
+                  <Bookmark size={14} />
                   <span>Saved Tools</span>
                 </div>
                 <span className="sidebar-sub-count">{savedToolIds.length}</span>
@@ -141,8 +132,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
                 className="sidebar-sub-item"
               >
                 <div className="sidebar-sub-left">
-                  <GitCompare size={15} />
-                  <span>Saved Comparisons</span>
+                  <GitCompare size={14} />
+                  <span>Comparisons</span>
                 </div>
                 <span className="sidebar-sub-count">{compareToolIds.length > 0 ? compareToolIds.length : 3}</span>
               </NavLink>
@@ -153,7 +144,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
                 className="sidebar-sub-item"
               >
                 <div className="sidebar-sub-left">
-                  <FolderHeart size={15} />
+                  <FolderHeart size={14} />
                   <span>Collections</span>
                 </div>
                 <span className="sidebar-sub-count">{collections.length > 0 ? collections.length : 2}</span>
@@ -167,7 +158,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
           <div className="sidebar-promo-card">
             <h4 className="promo-title">Smarter Decisions. Better Tools.</h4>
             <p className="promo-desc">
-              Research, compare and find the right AI tools and software before you make your next choice.
+              Research, compare and find the right AI tools and software.
             </p>
             <NavLink
               to="/recommendations"
@@ -175,9 +166,25 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile = false, onCloseM
               className="promo-btn"
             >
               <span>Get Started</span>
-              <ArrowRight size={13} />
+              <ArrowRight size={12} />
             </NavLink>
           </div>
+        </div>
+
+        {/* User footer pill */}
+        <div className="sidebar-user-footer">
+          <Link to="/profile" className="sidebar-user-pill" onClick={onCloseMobile}>
+            <div className="sidebar-user-avatar">
+              <span>A</span>
+            </div>
+            <div className="sidebar-user-info">
+              <span className="sidebar-user-name">xZariel</span>
+              <span className="sidebar-user-tagline">
+                <TrendingUp size={10} />
+                Keep exploring
+              </span>
+            </div>
+          </Link>
         </div>
       </aside>
     </>

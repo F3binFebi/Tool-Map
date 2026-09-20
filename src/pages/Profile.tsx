@@ -74,11 +74,11 @@ export const Profile: React.FC = () => {
       <section className="profile-hero-banner">
         <div className="profile-user-left">
           <div className="profile-avatar-circle">
-            <span>A</span>
+            <span>X</span>
           </div>
 
           <div className="profile-user-info">
-            <h1 className="profile-welcome-heading">Welcome back, Alex 👋</h1>
+            <h1 className="profile-welcome-heading">Welcome back, xZariel 👋</h1>
             <p className="profile-welcome-sub">Here's your activity and saved items.</p>
           </div>
         </div>
@@ -380,11 +380,11 @@ export const Profile: React.FC = () => {
             <div className="preferences-list" style={{ marginTop: '1rem' }}>
               <div className="pref-item">
                 <span>Account Name</span>
-                <span className="pref-value">Alex</span>
+                <span className="pref-value">xZariel</span>
               </div>
               <div className="pref-item">
                 <span>Account Email</span>
-                <span className="pref-value">alex@example.com</span>
+                <span className="pref-value">xzariel@example.com</span>
               </div>
               <div className="pref-item">
                 <span>Data Storage</span>

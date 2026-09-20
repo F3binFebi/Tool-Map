@@ -33,11 +33,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-xl);
   padding: 0.625rem 1rem;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm);
 }
 
 .explore-inline-search {
@@ -45,8 +45,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
   border-radius: var(--radius-full);
   padding: 0.4rem 0.875rem;
   max-width: 480px;
@@ -54,8 +54,8 @@
 }
 
 .explore-inline-search:focus-within {
-  background-color: #ffffff;
-  border-color: var(--primary);
+  background: rgba(255,255,255,0.08);
+  border-color: var(--primary-border);
   box-shadow: 0 0 0 3px var(--primary-glow);
 }
 
@@ -134,14 +134,14 @@
 
 /* Left Filter Sidebar */
 .explore-filter-sidebar {
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: calc(var(--header-height) + 1.5rem);
 }
@@ -301,18 +301,19 @@
 
 /* Horizontal Tool List Card matching Reference Screen 2 */
 .explore-tool-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: var(--radius-xl);
   padding: 1.25rem;
   transition: all var(--transition);
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-card);
 }
 
 .explore-tool-card:hover {
-  border-color: var(--border-medium);
-  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(99,102,241,0.35);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
   transform: translateY(-2px);
+  background: #141d30;
 }
 
 .etc-main-row {
@@ -439,16 +440,16 @@
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
   transition: all var(--transition-fast);
   cursor: pointer;
 }
 
 .etc-action-btn:hover {
-  background-color: var(--bg-muted);
+  background: rgba(255,255,255,0.1);
   color: var(--text-primary);
-  border-color: var(--border-medium);
+  border-color: rgba(255,255,255,0.16);
 }
 
 .btn-active-compare {
@@ -565,8 +566,8 @@
 
 /* Empty & Loading States */
 .explore-empty-state {
-  background-color: #ffffff;
-  border: 1px dashed var(--border-medium);
+  background: var(--bg-card);
+  border: 1px dashed rgba(255,255,255,0.12);
   border-radius: var(--radius-xl);
   padding: 3rem 2rem;
   display: flex;
@@ -612,7 +613,7 @@
 
 .skeleton-card {
   height: 120px;
-  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background: linear-gradient(90deg, #1a2236 25%, #1e2a42 50%, #1a2236 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: var(--radius-xl);

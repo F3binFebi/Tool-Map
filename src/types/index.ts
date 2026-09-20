@@ -52,7 +52,18 @@ export interface Tool {
   keyWorkflow?: string;
   tags?: string[];
   logo?: string;
+  // Extended Research & Model Information
+  developerInfo?: import('./models').CompanyDeveloperInfo;
+  modelFamilies?: import('./models').AIModelFamily[];
+  apiInfo?: import('./models').DeveloperApiInfo;
+  strengths?: string[];
+  limitations?: string[];
+  competitorComparisons?: import('./models').CompetitorComparison[];
+  userReviews?: import('./models').ToolReviewItem[];
+  relatedResearchSlugs?: string[];
 }
+
+export * from './models';
 
 export interface CategoryInfo {
   id: string;

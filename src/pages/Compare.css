@@ -45,8 +45,8 @@
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-secondary);
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
   cursor: pointer;
@@ -67,19 +67,19 @@
 }
 
 .selected-tool-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-card);
   transition: all var(--transition);
 }
 
 .selected-tool-card:hover {
-  border-color: var(--border-medium);
+  border-color: rgba(99,102,241,0.35);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -145,7 +145,7 @@
 .add-tool-dashed-card:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background-color: var(--primary-light);
+  background: var(--primary-light);
 }
 
 .add-tool-icon-wrap {
@@ -161,11 +161,11 @@
 
 /* Comparison Matrix Table Card */
 .compare-matrix-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm);
 }
 
 .matrix-table-wrap {
@@ -186,7 +186,7 @@
 }
 
 .matrix-table thead tr {
-  background-color: var(--bg-subtle);
+  background: rgba(255,255,255,0.04);
 }
 
 .th-feature-label {
@@ -214,7 +214,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
-  background-color: var(--bg-page);
+  background: rgba(255,255,255,0.02);
   width: 22%;
 }
 
@@ -315,14 +315,14 @@
 }
 
 .cmp-proscons-tool-box {
-  background-color: #ffffff;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-card);
 }
 
 .tool-box-header {
@@ -397,14 +397,14 @@
 }
 
 .verdict-card {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
-  border: 1px solid var(--primary-border);
+  background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(139,92,246,0.08) 100%);
+  border: 1px solid rgba(99,102,241,0.25);
   border-radius: var(--radius-xl);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-card);
 }
 
 .verdict-card-top {
@@ -468,11 +468,12 @@
 }
 
 .cmp-modal-window {
-  background-color: #ffffff;
+  background: #111827;
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-xl);
   width: 100%;
   max-width: 480px;
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.7);
   display: flex;
   flex-direction: column;
   max-height: 80vh;
@@ -504,8 +505,8 @@
   align-items: center;
   gap: 0.625rem;
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid var(--border-subtle);
-  background-color: var(--bg-subtle);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.04);
 }
 
 .modal-search-input {
@@ -539,7 +540,7 @@
 }
 
 .cmp-modal-item:hover {
-  background-color: var(--bg-subtle);
+  background: rgba(255,255,255,0.06);
 }
 
 .cmp-modal-item-info {
@@ -572,8 +573,8 @@
 
 /* Empty State */
 .compare-empty-card {
-  background-color: #ffffff;
-  border: 1px dashed var(--border-medium);
+  background: var(--bg-card);
+  border: 1px dashed rgba(255,255,255,0.12);
   border-radius: var(--radius-2xl);
   padding: 3rem 2rem;
   text-align: center;
